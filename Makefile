@@ -2,15 +2,15 @@
 
 bucket_name  = np-lambda-functions
 function_dir = sample_package
-zip_file	   = $(function_dir).zip
+zip_file     = $(function_dir).zip
 runtime      = python2.7 
-iam_role	   = arn:aws:iam::184511417627:role/lambdarole
+iam_role     = arn:aws:iam::184511417627:role/lambdarole
 handler      = myfuction.lambda_handler
 timeout	     = 10
 memory       = 128
 subnets      = subnet-966d98aa
 sec_groups   = sg-f34b4f8b
-vpc_config	 = SubnetIds=$(subnets),SecurityGroupIds=$(sec_groups)
+vpc_config   = SubnetIds=$(subnets),SecurityGroupIds=$(sec_groups)
 
 build:
 	zip $(zip_file) ./* -x '*.log' -x '*.zip'
