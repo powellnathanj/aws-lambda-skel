@@ -21,13 +21,13 @@ bucket:
 publish:
 	aws lambda create-function \
 	--function-name $(function_dir) \
-  --runtime $(runtime) \
-  --role $(iam_role) \
-  --handler $(handler) \
-  --timeout $(timeout) \
-  --memory-size $(memory) \
-  --vpc-config $(vpc_config) \
-  --zip-file fileb://$(zip_file)
+	--runtime $(runtime) \
+	--role $(iam_role) \
+	--handler $(handler) \
+	--timeout $(timeout) \
+	--memory-size $(memory) \
+	--vpc-config $(vpc_config) \
+	--zip-file fileb://$(zip_file)
 
 run:
 	aws lambda invoke --function-name $(function_dir) out.log
