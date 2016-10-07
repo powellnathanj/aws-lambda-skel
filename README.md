@@ -6,11 +6,7 @@ I wanted to create a small app as a starting point for creating AWS Lambda funct
 
 This repo assumes you have the awscli set up and configured with the right account/credentials.
 
-# Usage
-
-`$ vim Makefile # edit variables as needed`
-
-Explanation of the variables
+Below you'll be told to edit the variables in the Makefile.  Here is an explanation for each of them.
 
 `bucket_name` This is a unique to AWS bucket name where you want to upload your zip file.  It is used for both creating a bucket and designating where to upload to.  
 
@@ -34,6 +30,10 @@ Explanation of the variables
 
 `vpc_config`
 
+
+# Usage
+
+`$ vim Makefile # edit variables as needed`
 
 `$ make bucket`
 
