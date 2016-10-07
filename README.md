@@ -18,4 +18,4 @@ I wanted to create a small app as a starting point for creating AWS Lambda funct
 
 Then get rid of it all
 
-`make clean`
+`$ make clean`
