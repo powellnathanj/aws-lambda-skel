@@ -1,8 +1,8 @@
 # Sample Makefile for creating AWS Lambda deployment packages
 
 bucket_name  = np-lambda-functions
-function_dir = sample_package
-zip_file     = $(function_dir).zip
+function_pkg = sample_package
+zip_file     = $(function_pkg).zip
 runtime      = python2.7 
 iam_role     = arn:aws:iam::184511417627:role/lambdarole
 handler      = myfuction.lambda_handler
@@ -20,7 +20,7 @@ bucket:
 
 publish:
 	aws lambda create-function \
-	--function-name $(function_dir) \
+	--function-name $(function_pkg) \
 	--runtime $(runtime) \
 	--role $(iam_role) \
 	--handler $(handler) \
@@ -30,7 +30,7 @@ publish:
 	--zip-file fileb://$(zip_file)
 
 run:
-	aws lambda invoke --function-name $(function_dir) out.log
+	aws lambda invoke --function-name $(function_pkg) out.log
 
 clean:
-	aws lambda delete-function --function-name $(function_dir) ; rm $(zip_file)
+	aws lambda delete-function --function-name $(function_pkg) ; rm $(zip_file)
